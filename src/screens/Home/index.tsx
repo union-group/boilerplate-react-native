@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react'
 import { View, Image, Text } from 'react-native'
 import { StatusBar } from 'expo-status-bar'

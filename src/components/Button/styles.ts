@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { colors } from '../../styles/colors'
+import { fonts } from '../../styles/fonts'
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -11,6 +12,7 @@ export const styles = StyleSheet.create({
     borderRadius: 16,
   },
   text: {
+    fontFamily: fonts.medium,
     fontSize: 16,
     color: colors.white,
   },
