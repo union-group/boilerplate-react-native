@@ -1,23 +1,25 @@
-import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/colors'
-import { fonts } from '../../styles/fonts'
+import styled, { css } from 'styled-components/native'
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#171717',
-  },
-  logo: {
-    width: 150,
-    height: 150,
-  },
-  text: {
-    fontFamily: fonts.bold,
-    textAlign: 'center',
-    fontSize: 32,
-    color: colors.white,
-    marginBottom: 32,
-  },
-})
+export const Container = styled.View`
+  ${({ theme }) => css`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background: ${theme.colors.background};
+  `}
+`
+
+export const Logo = styled.Image`
+  width: 150px;
+  height: 150px;
+`
+
+export const Text = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.fonts.bold};
+    text-align: center;
+    font-size: ${theme.fonts.sizes.large};
+    color: ${theme.colors.white};
+    margin-bottom: ${theme.spacings.large};
+  `}
+`

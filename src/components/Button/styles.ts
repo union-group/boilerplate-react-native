@@ -1,19 +1,26 @@
-import { StyleSheet } from 'react-native'
-import { colors } from '../../styles/colors'
-import { fonts } from '../../styles/fonts'
+import styled, { css } from 'styled-components/native'
+import { RectButton } from 'react-native-gesture-handler'
 
-export const styles = StyleSheet.create({
-  wrapper: {
-    paddingHorizontal: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.purple,
-    height: 56,
-    borderRadius: 16,
-  },
-  text: {
-    fontFamily: fonts.medium,
-    fontSize: 16,
-    color: colors.white,
-  },
-})
+import { ButtonProps } from '.'
+
+type ContainerProps = Pick<ButtonProps, 'color'>
+
+export const Container = styled(RectButton)<ContainerProps>`
+  ${({ theme, color }) => css`
+    width: 50%;
+    border-radius: 16px;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.colors[color]};
+    margin: ${theme.spacings.medium};
+  `}
+`
+
+export const Text = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.fonts.medium};
+    font-size: ${theme.fonts.sizes.medium};
+    color: ${theme.colors.white};
+  `}
+`

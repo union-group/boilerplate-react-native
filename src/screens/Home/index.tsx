@@ -1,14 +1,14 @@
-/* eslint-disable react/style-prop-object */
 import React from 'react'
-import { View, Image, Text } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
+
 import { useNavigation } from '@react-navigation/native'
 
 import { Button } from '../../components/Button'
 
 import { NavigationProps } from '../../routes/types/navigation'
 
-import { styles } from './styles'
+import logo from '../../assets/logo.png'
+
+import * as S from './styles'
 
 export const Home = () => {
   const navigation = useNavigation<NavigationProps>()
@@ -18,14 +18,13 @@ export const Home = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="light" />
-      <Image style={styles.logo} source={require('../../assets/logo.png')} />
-      <Text style={styles.text}>
+    <S.Container>
+      <S.Logo source={logo} />
+      <S.Text>
         Hello World {'\n'}
         Union Group
-      </Text>
-      <Button title="Next page" onPress={handleNextPage} />
-    </View>
+      </S.Text>
+      <Button onPress={handleNextPage}>Next page</Button>
+    </S.Container>
   )
 }

@@ -1,16 +1,21 @@
 import React from 'react'
-import { TouchableOpacity, TouchableOpacityProps, Text } from 'react-native'
+import { RectButtonProps } from 'react-native-gesture-handler'
 
-import { styles } from './styles'
+import * as S from './styles'
 
-interface ButtonProps extends TouchableOpacityProps {
-  title: string
+export interface ButtonProps extends RectButtonProps {
+  children: React.ReactNode
+  color?: 'purple' | 'blue'
 }
 
-export const Button = ({ title, ...rest }: ButtonProps) => {
+export const Button = ({
+  children,
+  color = 'purple',
+  ...rest
+}: ButtonProps) => {
   return (
-    <TouchableOpacity style={styles.wrapper} {...rest}>
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    <S.Container color={color} {...rest}>
+      <S.Text>{children}</S.Text>
+    </S.Container>
   )
 }
