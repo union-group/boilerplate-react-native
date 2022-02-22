@@ -44,6 +44,8 @@
     "global-require": 0,
     "react/function-component-definition": 0,
     "react/jsx-no-bind": 0,
-    "camelcase": 0
+    "camelcase": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "react/require-default-props": 0
   }
 }
